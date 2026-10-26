@@ -1,169 +1,170 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Me</title>
+    <title>About Me — Hendrew Hilary</title>
 
     <style>
-    
-* {
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: #080808;
-    color: #b0b0b0;
-    font-family: Arial, sans-serif;
+        body {
+            background-color: #0d0d0d;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-.hidden-page {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 32px;
-    padding: 24px;
-}
+            animation: fadeIn 1s ease forwards;
+        }
 
-.message {
-    max-width: 650px;
-    margin: 0;
-    color: #999999;
-    font-size: clamp(16px, 2.5vw, 22px);
-    font-weight: 400;
-    letter-spacing: 1px;
-    line-height: 1.8;
-}
+        .navigation {
+            position: absolute;
+            top: 30px;
+            left: 8%;
+            right: 8%;
 
-.smileys {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-}
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+        }
 
-.face {
-    width: 48px;
-    height: 48px;
-    position: relative;
-    border: 2px solid #666666;
-    border-radius: 50%;
-    animation: loadingBounce 1.2s ease-in-out infinite;
-}
+        .navigation a {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
 
-.face:nth-child(2) {
-    animation-delay: 0.2s;
-}
+        .navigation a:hover {
+            color: white;
+        }
 
-.face:nth-child(3) {
-    animation-delay: 0.4s;
-}
+        .construction {
+            text-align: center;
+            padding: 20px;
+            animation: appear 1.2s ease forwards;
+        }
 
-.eyes::before,
-.eyes::after {
-    content: "";
-    position: absolute;
-    top: 14px;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #888888;
-}
+        .smileys {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 35px;
+        }
 
-.eyes::before {
-    left: 12px;
-}
+        .face {
+            width: 55px;
+            height: 55px;
+            border: 2px solid #aaa;
+            border-radius: 50%;
+            position: relative;
 
-.eyes::after {
-    right: 12px;
-}
+            animation: loadingBounce 1.2s ease-in-out infinite;
+        }
 
-.mouth {
-    position: absolute;
-    top: 24px;
-    left: 13px;
-    width: 18px;
-    height: 9px;
-    border-bottom: 2px solid #888888;
-    border-radius: 50%;
-}
+        .face:nth-child(1) {
+            animation-delay: 0s;
+        }
 
-@keyframes loadingBounce {
-    0%, 100% {
-        transform: translateY(0);
-        border-color: #444444;
-    }
+        .face:nth-child(2) {
+            animation-delay: 0.2s;
+        }
 
-    30% {
-        transform: translateY(-10px);
-        border-color: #999999;
-    }
+        .face:nth-child(3) {
+            animation-delay: 0.4s;
+        }
 
-    60% {
-        transform: translateY(0);
-        border-color: #666666;
-    }
-}
+        .eyes {
+            position: absolute;
+            top: 16px;
+            left: 13px;
+            width: 5px;
+            height: 5px;
+            background: #aaa;
+            border-radius: 50%;
+            box-shadow: 20px 0 #aaa;
+        }
 
-@media (prefers-reduced-motion: reduce) {
-    .face {
-        animation: none;
-    }
-}
+        .mouth {
+            position: absolute;
+            left: 16px;
+            top: 25px;
+            width: 19px;
+            height: 10px;
+            border-bottom: 2px solid #aaa;
+            border-radius: 50%;
+        }
 
+        .construction p {
+            color: #777;
+            font-size: 16px;
+            letter-spacing: 1px;
+            line-height: 1.8;
+        }
 
-.page-nav {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    z-index: 10;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-.page-nav a {
-    color: #777777;
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 3px;
-    transition: color 0.3s ease;
-}
+            to {
+                opacity: 1;
+            }
+        }
 
-.page-nav a:hover {
-    color: #ffffff;
-}
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-@media (max-width: 600px) {
-    .page-nav {
-        top: 22px;
-        gap: 25px;
-    }
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
+        @keyframes loadingBounce {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                border-color: #555;
+            }
 
+            30% {
+                transform: translateY(-15px);
+                border-color: #fff;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .face {
+                animation: none;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <nav class="navigation">
-    <a href="index.html">HOME</a>
-    <a href="Creation.html">CREATIONS</a>
-</nav>
+        <a href="index.html">HOME</a>
+        <a href="creation.html">CREATION</a>
+    </nav>
 
-    <div class="hidden-page">
+    <div class="construction">
 
         <div class="smileys">
             <div class="face">
@@ -182,7 +183,7 @@ body {
             </div>
         </div>
 
-        <p class="message">
+        <p>
             Sorry, This page is hidden for the moment.<br>
             Please check later!
         </p>

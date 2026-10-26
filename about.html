@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,722 +7,126 @@
     <title>About Me</title>
 
     <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #0d0d0d;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
-            width: 100%;
-            padding: 25px 8%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 35px;
-        }
-
-        nav ul li a {
-            color: #aaa;
-            text-decoration: none;
-            font-size: 14px;
-
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: white;
-        }
-
-
-        /* =========================
-           MAIN
-        ========================= */
-
-        .about {
-            padding: 150px 10% 100px;
-        }
-
-        .about-content {
-            max-width: 900px;
-            animation: fadeUp 1s ease forwards;
-        }
-
-
-        /* =========================
-           HEADINGS
-        ========================= */
-
-        .small-text {
-            color: #888;
-            letter-spacing: 4px;
-            font-size: 13px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-size: clamp(50px, 8vw, 90px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-
-        /* =========================
-           TEXT
-        ========================= */
-
-        .section {
-            margin-bottom: 100px;
-        }
-
-        .text {
-            color: #aaa;
-            font-size: 18px;
-            line-height: 1.8;
-            max-width: 700px;
-            margin-bottom: 20px;
-        }
-
-
-       /* =========================
-   MUSIC
-========================= */
-
-.music-genres {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-
-    margin-bottom: 50px;
-}
-
-.genre {
-    border: 1px solid #333;
-
-    padding: 12px 20px;
-
-    color: #aaa;
-
-    font-size: 14px;
-
-    transition: 0.3s;
-}
-
-.genre:hover {
-    border-color: #777;
-    color: white;
-
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   KINO
-========================= */
-
-.kino {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    border: 1px solid #333;
-
-    max-width: 800px;
-
-    overflow: hidden;
-}
-
-.kino-image {
-    min-height: 350px;
-}
-
-.kino-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    filter: grayscale(100%);
-
-    transition: 0.5s;
-}
-
-.kino:hover .kino-image img {
-    filter: grayscale(0%);
-    transform: scale(1.03);
-}
-
-.kino-info {
-    padding: 40px;
-
+       .hidden-page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.kino-info h3 {
-    font-size: 50px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 25px;
-}
-
-.kino-info .text {
-    margin-bottom: 20px;
-}
-
-.kino-members {
-    color: #666;
-
-    font-size: 13px;
-
-    letter-spacing: 1px;
-}
-
-
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) 
-
-        { things-grid {
-    grid-template-columns: 1fr;
-}
-
-.thing img {
-    height: 250px;
-}
-        
-            nav {
-                padding: 20px;
-            }
-
-            nav ul {
-                gap: 15px;
-            }
-
-            nav ul li a {
-                font-size: 12px;
-            }
-
-            .about {
-                padding: 120px 8% 80px;
-            }
-
-            h1 {
-                font-size: 60px;
-            }
-
-            .text {
-                font-size: 16px;
-            }
-
-            .interests {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-        .kino {
-    grid-template-columns: 1fr;
-}
-
-.kino-image {
-    min-height: 250px;
-}
-
-.kino-info {
-    padding: 30px;
-}
-
-.profile {
-    width: 170px;
-    height: 170px;
-}
-
-/* =========================
-   THINGS I WANT
-========================= */
-
-.things {
-    margin-top: 100px;
-}
-
-.things h3 {
-    font-size: 45px;
-    letter-spacing: 3px;
-    margin-bottom: 25px;
-}
-
-.things-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 900px;
-}
-
-.thing {
-    border: 1px solid #333;
-    overflow: hidden;
-    transition: .3s;
-}
-
-.thing:hover {
-    border-color: #777;
-    transform: translateY(-5px);
-}
-
-.thing img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    display: block;
-    filter: grayscale(100%);
-    transition: .5s;
-}
-
-.thing:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.03);
-}
-
-.thing p {
-    color: #aaa;
-    font-size: 14px;
-    padding: 18px;
-    letter-spacing: 1px;
-}
-
-/* =========================
-   PROFILE
-========================= */
-
-.profile-section {
-    margin-bottom: 80px;
-    animation: profileIn 1s ease forwards;
-}
-
-.profile {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 1px solid #444;
-    overflow: hidden;
-}
-
-.profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: grayscale(100%);
-    transition: .5s ease;
-}
-
-.profile:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-}
-
-/* =========================
-   HIDDEN PHRASE
-========================= */
-
-.profile-section {
-    display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 30px;
+    padding: 20px;
 }
 
-.hidden-phrase {
-    opacity: 0;
-    transform: translateX(-20px);
-    pointer-events: none;
-    transition: .6s ease;
-}
-
-.hidden-phrase span {
-    display: block;
-    color: white;
-    font-size: 22px;
-    letter-spacing: 3px;
-    font-style: italic;
-}
-
-.hidden-phrase small {
-    display: block;
-    margin-top: 8px;
-    color: #666;
-    font-size: 12px;
+.message {
+    font-size: clamp(18px, 3vw, 28px);
     letter-spacing: 1px;
+    max-width: 700px;
+    text-align: center;
 }
 
-.hidden-phrase.show {
-    opacity: 1;
-    transform: translateX(0);
+.smileys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
 }
 
-@keyframes profileIn {
+.face {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    position: relative;
 
-    from {
-        opacity: 0;
-        transform: translateY(-30px) scale(.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
+    animation: loadingBounce 1.2s ease-in-out infinite;
 }
 
-     /* Page transition */
-body {
-    opacity: 0;
-    animation: pageIn 0.8s ease forwards;
+.face:nth-child(2) {
+    animation-delay: 0.2s;
 }
 
-body.page-exit {
-    animation: pageOut 0.8s ease forwards;
+.face:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
-@keyframes pageIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
+.eyes::before,
+.eyes::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #aaa;
+    border-radius: 50%;
+    top: 17px;
+}
 
-    to {
-        opacity: 1;
+.eyes::before {
+    left: 14px;
+}
+
+.eyes::after {
+    right: 14px;
+}
+
+.mouth {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border-bottom: 2px solid #aaa;
+    border-radius: 50%;
+    left: 16px;
+    top: 27px;
+}
+
+@keyframes loadingBounce {
+    0%, 100% {
         transform: translateY(0);
+        border-color: #555;
     }
-}
 
-@keyframes pageOut {
-    from {
-        opacity: 1;
+    30% {
+        transform: translateY(-15px);
+        border-color: #fff;
+    }
+
+    60% {
         transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-10px);
+        border-color: #aaa;
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .face {
+        animation: none;
+    }
+}
     </style>
-
 </head>
-
-
 <body>
 
+    <div class="hidden-page">
 
-    <!-- Navigation -->
-
-    <nav>
-
-        <div class="logo">
-            HH
-        </div>
-
-        <ul>
-
-            <li>
-                <a href="index.html">HOME</a>
-            </li>
-
-            <li>
-                <a href="about.html">ABOUT ME</a>
-            </li>
-
-            <li>
-                <a href="creation.html">CREATION</a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-
-    <!-- About Page -->
-
-    <main class="about">
-
-        <div class="about-banner"></div>
-
-        <div class="about-content">
-
-            <div class="profile-section">
-
-    <div class="profile" onclick="showPhrase()">
-        <img src="images/Hendrew2.jpeg" alt="Hendrew">
-    </div>
-
-    <div class="hidden-phrase" id="hiddenPhrase">
-        <span>vis voluntatis</span>
-        <small>— Hendrew 2026</small>
-    </div>
-
-</div>
-
-
-            <!-- INTRODUCTION -->
-
-            <div class="section">
-
-                <p class="small-text">
-                    About Me
-                </p>
-
-                <h1>
-                    The Person
-                </h1>
-
-                <p class="text">
-                    Helo Me Hendrew, a student who enjoys understanding and learning
-                    how things work. I'm a very open-minded person that is able to 
-                    accept any ideas from one another.
-
-                </p>
-
-                <p class="text">
-                    I'd describe myself as someone who is deeply reflective, curious, and quietly ambitious.
-                    I tend to look beyond the surface of things, whether it's understanding people, relationships, philosophy, science, 
-                    or even the meaning behind a simple phrase.
-                    I would think that I have an analytical side that enjoys observing patterns and thinking strategically, 
-                    but sometimes a creative and poetic side that comes through in the way I appreciate music, languages, and meaningful words. 
-                    I seem to value having my own perspective rather than simply accepting what everyone else thinks.
-                    At the end of the day, I would still be different from other's perspective.
-                </p>
-
-                <p class="text">
-                    I'm still someone who is still building its dignity,
-                    rather than believing I have everything figured out already.
-                    Truly I care about becoming more disciplined, improving academically,
-                    developing my obscure interests, and becoming a better person. 
-                    At times, my tendency to think deeply can turn into overthinking,
-                    but that same depth is also one of my strengths—it makes me question, observe, and learn from experiences.
-                    Beneath all the different interests and ideas, 
-                    I seem to be searching for something more consistent: a life with meaning, strong principles, genuine relationships,
-                    and a sense of individuality
-                </p>
-
+        <div class="smileys">
+            <div class="face">
+                <span class="eyes"></span>
+                <span class="mouth"></span>
             </div>
 
-            <!-- MUSIC -->
+            <div class="face">
+                <span class="eyes"></span>
+                <span class="mouth"></span>
+            </div>
 
-<div class="section">
-
-    <p class="small-text">
-        What I Listen To
-    </p>
-
-    <h2>
-        MUSIC
-    </h2>
-
-    <p class="text">
-        I am drawn to music with atmosphere, emotion,
-        and a distinct character.
-    </p>
-
-
-    <!-- Genres -->
-
-    <div class="music-genres">
-
-        <div class="genre">
-            Post-Punk
+            <div class="face">
+                <span class="eyes"></span>
+                <span class="mouth"></span>
+            </div>
         </div>
 
-        <div class="genre">
-            Rock
-        </div>
-
-        <div class="genre">
-            Soviet Rock
-        </div>
-
-        <div class="genre">
-            Alternative
-        </div>
+        <p class="message">
+            Sorry, This page is hidden for the moment.<br>
+            Please check later!
+        </p>
 
     </div>
-
-
-    <!-- KINO -->
-
-    <div class="kino">
-
-        <div class="kino-image">
-            <img src="images/images.png" alt="Kino">
-        </div>
-
-        <div class="kino-info">
-
-            <p class="small-text">
-                Favourite Band
-            </p>
-
-            <h3>
-                Кино(KINO)
-            </h3>
-
-            <p class="text">
-                Kino is one of my favourite bands.
-                Their music, atmosphere and the work
-                of Viktor Tsoi and Yuri Kasparyan
-                are especially meaningful to me.
-            </p>
-
-            <p class="text">
-                Kino (Russian: Кино) is a Russian rock band formed in Leningrad (now Saint Petersburg) in 1981.
-                The band was co-founded and headed by Viktor Tsoi, who wrote the music and lyrics for almost all of the band's songs,
-                until his death in 1990. Over the course of eight years,
-                Kino released over ninety songs spanning over seven studio albums, as well as releasing a few compilations and live albums.
-                During the days of the Soviet Union, the band's music was also widely circulated in the form of bootleg recordings through the underground magnitizdat distribution scene.
-                Viktor Tsoi died in a car accident in 1990.
-                Shortly after his death, the band broke up after releasing their final album,
-                consisting of songs that Tsoi and the group were working on in the months before his death.
-            </p>
-
-            <p class="kino-members">
-                • Viktor Tsoi (Ви́ктор Цой) – Lead vocals, guitar, and founder
-                • Yuri Kasparyan (Ю́рий Каспаря́н) – Lead guitar
-                • Georgy Guryanov (Гео́ргий Гурья́нов, also spelled Georgiy Guryanov) – Drums and backing vocals
-                • Igor Tikhomirov (И́горь Тихоми́ров) – Bass guitar
-            </p>
-            <!-- THINGS I WANT -->
-
-<div class="things">
-
-    <p class="small-text">
-        Things I Want
-    </p>
-
-    <h3>
-        Legendary
-    </h3>
-
-    <p class="text">
-        My love for this genre goes beyond listening,
-        I would like to experience its sound myself.
-    </p>
-
-    <div class="things-grid">
-
-        <div class="thing">
-            <img src="images/images.jpg" alt="Electric Guitar">
-            <p>Yamaha sg-200</p>
-        </div>
-
-        <div class="thing">
-            <img src="images/jackson.webp" alt="Electric Guitar">
-            <p>Squier Stratocaster Mij</p>
-        </div>
-
-        <div class="thing">
-            <img src="images/boss.jpg" alt="BOSS HM-2">
-            <p>BOSS HM-2</p>
-        </div>
-
-    </div>
-
-</div>
-
-    </main>
-
-    <script>
-    function showPhrase() {
-        const phrase = document.getElementById("hiddenPhrase");
-
-        phrase.classList.toggle("show");
-    }
-    </script>
-
-    <script>
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function(event) {
-
-        const destination = this.href;
-
-        // Only animate links to another page
-        if (destination && !destination.includes("#")) {
-            event.preventDefault();
-
-            document.body.classList.add("page-exit");
-
-            setTimeout(() => {
-                window.location.href = destination;
-            }, 500);
-        }
-    });
-});
-</script>
 
 </body>
-
 </html>

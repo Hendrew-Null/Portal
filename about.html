@@ -122,9 +122,46 @@ body {
     }
 }
 
+
+.page-nav {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    z-index: 10;
+}
+
+.page-nav a {
+    color: #777777;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+}
+
+.page-nav a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .page-nav {
+        top: 22px;
+        gap: 25px;
+    }
+}
+
+
     </style>
 </head>
 <body>
+
+    <nav class="navigation">
+    <a href="index.html">HOME</a>
+    <a href="Creation.html">CREATIONS</a>
+</nav>
 
     <div class="hidden-page">
 

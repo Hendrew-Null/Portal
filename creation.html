@@ -158,6 +158,98 @@
         animation: none;
     }
 }
+        .projects {
+    width: min(850px, 84%);
+    margin: 100px auto 50px;
+    animation: appear 1.2s ease forwards;
+}
+
+.section-label {
+    color: #666;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+}
+
+.projects > h1 {
+    font-size: clamp(35px, 6vw, 60px);
+    letter-spacing: -2px;
+    margin-bottom: 35px;
+}
+
+.project-card {
+    border: 1px solid #292929;
+    background: #111;
+    text-align: left;
+    transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: #555;
+}
+
+.project-preview {
+    width: 100%;
+    height: 350px;
+    background: #080808;
+    overflow: hidden;
+    border-bottom: 1px solid #292929;
+}
+
+.project-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #080808;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.project-time {
+    color: #777;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.project-link {
+    display: inline-block;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: white;
+    border-color: white;
+}
+
+@media (max-width: 600px) {
+    .projects {
+        width: 90%;
+        margin-top: 100px;
+    }
+
+    .project-preview {
+        height: 260px;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+}
     </style>
 </head>
 
@@ -168,19 +260,40 @@
     <a href="about.html">ABOUT ME</a>
 </nav>
 
-    <div class="construction">
+    <div class="projects">
 
-    <div class="smileys">
-        <div class="face"><span class="eyes"></span><span class="mouth"></span></div>
-        <div class="face"><span class="eyes"></span><span class="mouth"></span></div>
-        <div class="face"><span class="eyes"></span><span class="mouth"></span></div>
+    <p class="section-label">MY PROJECTS</p>
+    <h1>Digital Clock</h1>
+
+    <div class="project-card">
+
+        <div class="project-preview">
+            <iframe
+                src="https://hendrew-null.github.io/Digital-Clock/"
+                title="Digital Clock website preview"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="project-info">
+            <h2>Digital Clock</h2>
+
+            <p class="project-time">
+                Estimated 9 hours project
+            </p>
+
+            <a
+                class="project-link"
+                href="https://hendrew-null.github.io/Digital-Clock/"
+                target="_blank"
+                rel="noopener noreferrer">
+                VISIT PROJECT ↗
+            </a>
+        </div>
+
     </div>
 
-    <h1>Under construction...</h1>
-    <p>Please come back later.</p>
-
 </div>
-
 </body>
 
 </html>

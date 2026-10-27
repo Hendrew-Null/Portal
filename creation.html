@@ -250,6 +250,35 @@
         padding: 20px;
     }
 }
+        .nova-preview {
+    display: block;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: #080808;
+    border-bottom: 1px solid #292929;
+}
+
+.nova-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(25%);
+    transition: filter 0.3s ease, transform 0.4s ease;
+}
+
+.nova-preview:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    .nova-preview {
+        height: 260px;
+    }
+}
     </style>
 </head>
 
@@ -291,6 +320,39 @@
             </a>
         </div>
 
+    </div>
+
+</div>
+    <!-- NOVA Project -->
+<div class="project-card">
+
+    <a
+        class="nova-preview"
+        href="https://hendrew-null.github.io/NOVA/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open NOVA website">
+
+        <img
+            src="images/nova-preview.png"
+            alt="NOVA website preview">
+
+    </a>
+
+    <div class="project-info">
+        <h2>NOVA</h2>
+
+        <p class="project-time">
+            Estimated 3 days project
+        </p>
+
+        <a
+            class="project-link"
+            href="https://hendrew-null.github.io/NOVA/"
+            target="_blank"
+            rel="noopener noreferrer">
+            VISIT PROJECT ↗
+        </a>
     </div>
 
 </div>
